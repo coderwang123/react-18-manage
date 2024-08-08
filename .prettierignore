@@ -1,0 +1,8 @@
+/dist/*
+/build/*
+/src/assets/styles/*
+.local
+.output.js
+/node_modules/**
+**/*.svg
+/public/*

@@ -1,0 +1,186 @@
+import { IApiMenu } from "@/apis/system/menu/type";
+
+export const configTestPage: IApiMenu.TBase[] = [
+  {
+    id: 530,
+    menuName: "搜索-表单-分页-权限",
+    menuPath: "/test/test-page",
+    menuType: 1,
+    menuSource: 1,
+    menuPermission: "",
+    parentId: 7788,
+    menuSort: "",
+    icon: "",
+    path: "",
+    hidden: 1,
+    componentPath: "/test/test-page/test-page",
+    child: [
+      {
+        id: 5201,
+        menuName: "新增-弹窗",
+        menuPath: "",
+        menuType: 2,
+        menuSource: 1,
+        menuPermission: "test-page:add:modal",
+        parentId: 530,
+        child: [],
+        menuSort: "",
+        icon: "",
+        path: "",
+        hidden: 1,
+        componentPath: ""
+      },
+      {
+        id: 5202,
+        menuName: "新增-跳页",
+        menuPath: "",
+        menuType: 2,
+        menuSource: 1,
+        menuPermission: "test-page:add:page",
+        parentId: 530,
+        child: [],
+        menuSort: "",
+        icon: "",
+        path: "",
+        hidden: 1,
+        componentPath: ""
+      },
+      {
+        id: 5203,
+        menuName: "编辑-弹窗",
+        menuPath: "",
+        menuType: 2,
+        menuSource: 1,
+        menuPermission: "test-page:edit:modal",
+        parentId: 530,
+        child: [],
+        menuSort: "",
+        icon: "",
+        path: "",
+        hidden: 1,
+        componentPath: ""
+      },
+      {
+        id: 5204,
+        menuName: "编辑-跳页",
+        menuPath: "",
+        menuType: 2,
+        menuSource: 1,
+        menuPermission: "test-page:edit:page",
+        parentId: 530,
+        child: [],
+        menuSort: "",
+        icon: "",
+        path: "",
+        hidden: 1,
+        componentPath: ""
+      },
+
+      {
+        id: 5205,
+        menuName: "删除",
+        menuPath: "",
+        menuType: 2,
+        menuSource: 1,
+        menuPermission: "test-page:remove",
+        parentId: 530,
+        child: [],
+        menuSort: "",
+        icon: "",
+        path: "",
+        hidden: 1,
+        componentPath: ""
+      },
+
+      {
+        id: 5206,
+        menuName: "详情",
+        menuPath: "",
+        menuType: 2,
+        menuSource: 1,
+        menuPermission: "test-page:detail",
+        parentId: 530,
+        child: [],
+        menuSort: "",
+        icon: "",
+        path: "",
+        hidden: 1,
+        componentPath: ""
+      },
+
+      {
+        id: 5207,
+        menuName: "详情-多模块",
+        menuPath: "",
+        menuType: 2,
+        menuSource: 1,
+        menuPermission: "test-page:detail:module",
+        parentId: 530,
+        child: [],
+        menuSort: "",
+        icon: "",
+        path: "",
+        hidden: 1,
+        componentPath: ""
+      }
+    ]
+  },
+  {
+    id: 531,
+    menuName: "测试-新增-页面",
+    menuPath: "/test/test-page/add",
+    menuType: 1,
+    menuSource: 1,
+    menuPermission: "",
+    parentId: 7788,
+    menuSort: "",
+    icon: "DesktopOutlined",
+    path: "",
+    hidden: 0,
+    componentPath: "/test/test-page/add-or-edit"
+  },
+  {
+    id: 532,
+    menuName: "测试-编辑-页面",
+    menuPath: "/test/test-page/edit",
+    menuType: 1,
+    menuSource: 1,
+    menuPermission: "",
+    parentId: 7788,
+    menuSort: "",
+    icon: "DesktopOutlined",
+    path: "",
+    hidden: 0,
+    componentPath: "/test/test-page/add-or-edit"
+  },
+
+  {
+    id: 533,
+    menuName: "测试-详情-页面",
+    menuPath: "/test/test-page/detail",
+    menuType: 1,
+    menuSource: 1,
+    menuPermission: "",
+    parentId: 7788,
+    menuSort: "",
+    icon: "DesktopOutlined",
+    path: "",
+    hidden: 0,
+    componentPath: "/test/test-page/detail"
+  },
+
+  {
+    id: 534,
+    menuName: "测试-详情-页面-多模块",
+    menuPath: "/test/test-page/detail-module",
+    menuType: 1,
+    menuSource: 1,
+    menuPermission: "",
+    parentId: 7788,
+    menuSort: "",
+    icon: "DesktopOutlined",
+    path: "",
+    hidden: 0,
+    componentPath: "/test/test-page/detail-module"
+  }
+];
