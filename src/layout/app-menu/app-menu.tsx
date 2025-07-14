@@ -8,6 +8,7 @@ import StyledMenu from "@/layout/app-menu/style";
 import classNames from "classnames";
 import BScroll from "@/components/b-scroll/b-scroll";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { loadAssets } from "@/utils/comm/load-assets";
 
 const AppMenu: React.FC<IPropsMenu> = (props) => {
   const { collapsed } = props;
@@ -37,11 +38,11 @@ const AppMenu: React.FC<IPropsMenu> = (props) => {
     <StyledMenu>
       <div className={"top"}>
         {collapsed ? (
-          <img className={"menu-logo"} src={require("@/assets/images/menu-logo.png")} alt={"泛米信科"} />
+          <img className={"menu-logo"} src={loadAssets("menu-logo.png")} alt={"泛米信科"} />
         ) : (
           <img
             className={"menu-logo-and-span"}
-            src={require("@/assets/images/menu-logo-and-span.png")}
+            src={loadAssets("menu-logo-and-span.png")}
             alt={"泛米信科"}
           />
         )}

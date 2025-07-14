@@ -5,6 +5,7 @@ import StyledCOperationLog from "./style";
 import { ATimeLine, ITimeLineItem } from "@/components/ant-data-show-cpns";
 import BScroll from "@/components/b-scroll/b-scroll";
 import { formatTime } from "@/utils/comm";
+import { loadAssets } from "@/utils/comm/load-assets";
 
 const COperationLog: React.FC<ICOperationLog> = (props) => {
   const configList = useMemo(() => {
@@ -51,7 +52,7 @@ const COperationLog: React.FC<ICOperationLog> = (props) => {
               <span className={"label-time"}>{item.label}</span>
             </div>
           ),
-          dot: <img className={"cont-dot"} src={require("@/assets/images/time-line-dot-log.png")} alt={""} />,
+          dot: <img className={"cont-dot"} src={loadAssets("time-line-dot-log.png")} alt={""} />,
           children: (
             <div>
               <h3 className={"cont-title"}>

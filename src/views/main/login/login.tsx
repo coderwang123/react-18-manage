@@ -2,11 +2,12 @@ import React, { memo } from "react";
 import { StyledLogin } from "./style";
 import LoginTabs from "./login-tabs/login-tabs";
 import LoginForm from "./login-form/login-form";
+import { loadAssets } from "@/utils/comm/load-assets";
 
 const Login: React.FC = () => {
   return (
     <StyledLogin className="login-wrap">
-      <img className={"login-span"} src={require("@/assets/images/login-span.png")} alt="" />
+      <img className={"login-span"} src={loadAssets("login-span.png")} alt="" />
       <div className={"login-content"}>
         <h2>欢迎登录泛米信科</h2>
         <LoginTabs />

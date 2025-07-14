@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import zhCN from "antd/locale/zh_CN";
+import '@ant-design/v5-patch-for-react-19';
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 import "normalize.css";
@@ -10,7 +11,7 @@ dayjs.locale("zh-cn");
 import App from "./App";
 import { ConfigProvider } from "antd";
 
-const root = createRoot(document.getElementById("root")!);
+const root = createRoot(document.getElementById("app")!);
 
 root.render(
   <ConfigProvider

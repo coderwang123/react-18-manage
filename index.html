@@ -1,19 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-<!--  <link rel="icon" href="/favicon.ico">-->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= htmlWebpackPlugin.options.title %></title>
-  <style>
-      #root {
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>不停块乐</title>
+
+    <!--  &lt;!&ndash; Import style &ndash;&gt;-->
+    <!--  <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />-->
+    <!--  &lt;!&ndash; Import Vue 3 &ndash;&gt;-->
+    <!--  <script src="//unpkg.com/vue@3"></script>-->
+    <!--  &lt;!&ndash; Import component library &ndash;&gt;-->
+    <!--  <script src="//unpkg.com/element-plus"></script>-->
+    <!-- Import style -->
+    <!--  <link-->
+    <!--    rel="stylesheet"-->
+    <!--    href="//cdn.jsdelivr.net/npm/element-plus/dist/index.css"-->
+    <!--  />-->
+    <!-- Import Vue 3 -->
+    <!--  <script src="//cdn.jsdelivr.net/npm/vue@3"></script>-->
+    <!-- Import component library -->
+    <!--  <script src="//cdn.jsdelivr.net/npm/element-plus"></script>-->
+
+    <style>
+      .app-loading {
+        display: flex;
         width: 100%;
         height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: rgba(var(--arcoblue-1), 0.7);
       }
-  </style>
-</head>
-<body>
-  <div id="root"></div>
-</body>
+
+      .app-loading .app-loading-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .app-loading .app-loading-title {
+        margin-bottom: 25px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: var(--color-neutral-10);
+      }
+
+      .app-loading .app-loading-logo {
+        width: 100px;
+        //margin: 0 auto 15px auto;
+      }
+
+      .app-loading .app-loading-item {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        vertical-align: middle;
+        border-radius: 50%;
+      }
+
+      .app-loading .app-loading-outter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 4px solid #2d8cf0;
+        border-bottom: 0;
+        border-left-color: transparent;
+        border-radius: 50%;
+        animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+      }
+
+      .app-loading .app-loading-inner {
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        border: 4px solid #87bdff;
+        border-right: 0;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+      }
+
+      @-webkit-keyframes loader-outter {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes loader-outter {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @-webkit-keyframes loader-inner {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+
+        100% {
+          -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+        }
+      }
+
+      @keyframes loader-inner {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+
+        100% {
+          -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+        }
+      }
+
+      .wave-loading {
+        margin-bottom: 25px;
+        //width: 400px;
+        //height: 100px;
+      }
+
+      .wave-loading span {
+        display: inline-block;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+        animation: wave-loading 1s ease-in-out infinite;
+        animation-delay: calc(0.1s * var(--time));
+      }
+
+      @keyframes wave-loading {
+        0% {
+          transform: translateY(0px);
+        }
+
+        25% {
+          transform: translateY(-20px);
+        }
+
+        50%,
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+<!--      <div class="app-loading">-->
+<!--        <div class="app-loading-wrap">-->
+<!--          <div class="app-loading-title">-->
+<!--            <img src="/logo.gif" class="app-loading-logo" alt="Logo" />-->
+
+<!--            &lt;!&ndash;      <div class="app-loading-title">系统加载中...</div>&ndash;&gt;-->
+<!--          </div>-->
+<!--          <div class="wave-loading">-->
+<!--            <span style="&#45;&#45;time: 1">系</span>-->
+<!--            <span style="&#45;&#45;time: 2">统</span>-->
+<!--            <span style="&#45;&#45;time: 3">加</span>-->
+<!--            <span style="&#45;&#45;time: 4">载</span>-->
+<!--            <span style="&#45;&#45;time: 5">中</span>-->
+<!--            <span style="&#45;&#45;time: 6">.</span>-->
+<!--            <span style="&#45;&#45;time: 7">.</span>-->
+<!--            <span style="&#45;&#45;time: 8">.</span>-->
+<!--          </div>-->
+<!--          <div class="app-loading-item">-->
+<!--            <div class="app-loading-outter"></div>-->
+<!--            <div class="app-loading-inner"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <script>
+      // window.addEventListener('keydown', function (event) {
+      //   if (event.ctrlKey && (event.keyCode == 107 || event.keyCode == 109 || event.keyCode == 187 || event.keyCode == 189)) {
+      //     event.preventDefault()
+      //   }
+      // })
+      // window.addEventListener(
+      //   'mousewheel',
+      //   function (event) {
+      //     if (event.ctrlKey) {
+      //       event.preventDefault()
+      //     }
+      //   },
+      //   { passive: false }
+      // )
+      // let lastWidth = document.documentElement.clientWidth
+
+      // window.addEventListener('resize', function () {
+      //   let widthNow = document.documentElement.clientWidth
+      //   if (widthNow != lastWidth) {
+      //     // 页面大小变化了，可能是缩放了，可以在这里添加处理逻辑
+      //     lastWidth = widthNow
+      //   }
+      // })
+    </script>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
 </html>

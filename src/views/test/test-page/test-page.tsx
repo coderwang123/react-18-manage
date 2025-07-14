@@ -13,6 +13,7 @@ import { pageTableConfig } from "./config/page-table.config";
 import { modalFormConfig } from "./config/modal-form.config";
 
 import { fakeTestTable } from "@/fake-data";
+import { loadAssets } from "@/utils/comm/load-assets";
 
 const TestPage: React.FC = () => {
   const navigate = useNavigate();
@@ -106,8 +107,8 @@ const TestPage: React.FC = () => {
 
         <h2>
           静态资源
-          <img className={"back"} src={require("@/assets/images/back.png")} alt="" />
-          <img className={"back"} src={require("../../../assets/images/back.png")} alt="" />
+          <img className={"back"} src={loadAssets("back.png")} alt="" />
+          <img className={"back"} src={loadAssets("back.png")} alt="" />
         </h2>
 
         <h2>封装基础--响应式搜索布局</h2>
