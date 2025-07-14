@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import PerRouter from "./router/per-router";
 import { ConfigProvider } from "antd";
 
+console.log('app');
 const App: React.FC = () => {
   const { locale, theme } = useContext(ConfigProvider.ConfigContext);
   useLayoutEffect(() => {
