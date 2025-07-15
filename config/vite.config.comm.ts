@@ -1,15 +1,15 @@
 import { resolve } from 'path'
-import { getBuildTime } from './utils';
-import {  loadEnv } from 'vite';
-import {setupVitePlugins} from "./plugin"
-import {consola} from 'consola';
+import { getBuildTime } from './utils'
+import { loadEnv } from 'vite'
+import { setupVitePlugins } from './plugin'
+import { consola } from 'consola'
 
-export default function configComm(configEnv?: any){
+export default function configComm(configEnv?: any) {
   // const viteEnv = loadEnv(configEnv.mode, process.cwd()) ;
   // consola.log("viteEnv", viteEnv);
-  const buildTime = getBuildTime();
-  consola.start('buildTime', buildTime); 
-  
+  const buildTime = getBuildTime()
+  consola.start('buildTime', buildTime)
+
   return {
     // base: viteEnv.VITE_BASE_URL,
     plugins: setupVitePlugins(configEnv, buildTime),
@@ -28,16 +28,14 @@ export default function configComm(configEnv?: any){
         {
           find: 'assets',
           replacement: resolve(__dirname, '../src/assets')
-        },
-
+        }
       ],
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     },
     optimizeDeps: {
-      entries: [
-      ],
+      entries: [],
       include: ['vue', 'vue-router', 'pinia', 'axios', 'better-scroll'] // 需要预加载的路由组件路径
-    },
+    }
 
     // css: {
     //   preprocessorOptions: {

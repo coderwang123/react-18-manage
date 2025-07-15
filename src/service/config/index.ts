@@ -11,20 +11,20 @@
 
 // import * as process from "node:process";
 
-let BASE_URL = "";
-if (process.env.NODE_ENV == "production") {
+let BASE_URL = ''
+if (import.meta.env.MODE != 'dev') {
   // 生产环境
   // BASE_URL = "https://dgp.deepin-ai.com";
-  BASE_URL = "";
+  BASE_URL = ''
 } else {
   // 开发环境
   // BASE_URL = "http://localhost:5173/";
   // BASE_URL = "http://192.168.110.26:9998";
-  BASE_URL = "/api";
+  BASE_URL = '/api'
 }
 
 // 3.通过创建.env文件直接创建变量
 // console.log(import.meta.env.VITE_URL)
 
-export const TIME_OUT = 10000;
-export { BASE_URL };
+export const TIME_OUT = 10000
+export { BASE_URL }

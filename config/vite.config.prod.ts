@@ -1,10 +1,10 @@
-import { mergeConfig, defineConfig } from 'vite'
+import { mergeConfig, defineConfig, UserConfig } from 'vite'
 import configComm from './vite.config.comm'
 
-export default defineConfig((configEnv) => {
+export default defineConfig(configEnv => {
   const configProd = {
     mode: 'production',
-      
+
     build: {
       write: true, // 启用将构建后的文件写入磁盘
       emptyOutDir: true, // 构建时清空该目录
@@ -49,13 +49,7 @@ export default defineConfig((configEnv) => {
         }
       }
     }
-  };
+  }
 
-  return mergeConfig(
-    configComm(configEnv),
-    configProd
-  )
+  return mergeConfig(configComm(configEnv), configProd) as UserConfig
 })
-
-
-

@@ -2,10 +2,10 @@
  * Whether to generate package preview
  * 是否生成打包报告
  */
-export default {};
+export default {}
 
 export function isReportMode(): boolean {
-  return process.env.REPORT === 'true';
+  return import.meta.env?.REPORT === 'true'
 }
-export * from './proxy';
-export * from './time';
+export * from './proxy'
+export * from './time'
